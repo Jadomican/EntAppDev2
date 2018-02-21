@@ -30,12 +30,13 @@ namespace ProductsListAPI.Controllers
             new Product{Id = 4, Name = "Brown Bread", Category = "Food", Price = 0.70M }
         };
 
-
+        //GET get all products
         public IEnumerable<Product> GetAllProducts()
         {
             return products;
         }
 
+        //GET - get a specific product
         public IHttpActionResult GetProduct(int id)
         {
             var product = products.FirstOrDefault((p) => p.Id == id);
@@ -50,7 +51,7 @@ namespace ProductsListAPI.Controllers
         }
 
 
-        //POST
+        //POST - add a new product
         public IHttpActionResult AddProduct(Product product)
         {
             if (ModelState.IsValid)
@@ -73,6 +74,55 @@ namespace ProductsListAPI.Controllers
             }
         }
 
+
+        //PUT - update a product
+        public IHttpActionResult PutUpdateProduct(int id, Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                if (id == product.Id)
+                {
+                    var record = products.SingleOrDefault(p => p.Id == id);
+                    if (record == null)
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        record.Name = product.Name;
+                        record.Category = product.Category;
+                        record.Price = product.Price;
+                        return Ok(record);
+                    }
+                }
+                else
+                {
+                    return BadRequest("invalid product");
+                }
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+
+        }
+
+
+        //DELETE - delete a product
+        public IHttpActionResult DeleteProduct(int id)
+        {
+            var record = products.SingleOrDefault(p => p.Id == id);
+            if (record != null)
+            {
+                products.Remove(record);
+                return Ok(record);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+        
     }
 }
 
