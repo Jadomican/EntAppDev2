@@ -8,7 +8,7 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fahrenheitEditText"
+        android:layout_below="@+id/radio_group"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp"
         android:onClick="convert"
@@ -55,22 +55,22 @@
         android:id="@+id/radio_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/button1"
+        android:layout_below="@id/fahrenheitEditText"
         android:layout_centerHorizontal="true">
+
+        <RadioButton
+            android:id="@+id/radioC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="Celcius" />
 
         <RadioButton
             android:id="@+id/radioF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fahrenheit" />
-
-        <RadioButton
-            android:id="@+id/radioC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="19dp"
-            android:text="Celcius" />
 
     </RadioGroup>
 

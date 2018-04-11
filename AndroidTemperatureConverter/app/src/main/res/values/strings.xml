@@ -9,4 +9,6 @@
 
     <string name="celsiusEditTextHint">0</string>
 
+    <string name="degrees">%1$s</string>
+
 </resources>
