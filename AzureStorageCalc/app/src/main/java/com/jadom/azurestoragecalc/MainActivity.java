@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         // read storage amount entered
         EditText storageEditText = (EditText) findViewById(R.id.gigabyteStorageTextEdit);
 
+
         if (TextUtils.isEmpty(storageEditText.getText().toString())) {
             Toast.makeText(this, "Enter a number", Toast.LENGTH_SHORT).show();
             return;
