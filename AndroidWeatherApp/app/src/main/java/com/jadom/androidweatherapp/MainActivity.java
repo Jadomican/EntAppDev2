@@ -2,6 +2,7 @@ package com.jadom.androidweatherapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -52,10 +53,9 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         String city = parent.getItemAtPosition(pos).toString();
         TextView temperatureTextView = (TextView) findViewById(R.id.temperatureTextView);
         ImageView conditionsImageView = (ImageView) findViewById(R.id.conditionsImageView);
-
+        Log.d("city", data.get(pos).getCity());
         // update UI i.e. temperature and conditions
         for (WeatherInformation w : data) {
-
             if (w.getCity().equalsIgnoreCase(city)) {
                 temperatureTextView.setText(w.getTemperatureCelcius() + " Celsius");
 
