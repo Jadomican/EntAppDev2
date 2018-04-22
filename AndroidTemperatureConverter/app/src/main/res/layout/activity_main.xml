@@ -15,7 +15,7 @@
         android:text="Convert" />
 
     <EditText
-        android:id="@+id/celsiusEditText"
+        android:id="@+id/euroEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/celsiusTextView"
@@ -28,28 +28,30 @@
         android:id="@+id/celsiusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/celsiusEditText"
+        android:layout_alignLeft="@+id/euroEditText"
         android:layout_alignParentTop="true"
         android:layout_marginTop="26dp"
-        android:text="Celsius" />
+        android:text="Euro" />
 
     <TextView
         android:id="@+id/fahrenheitTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/fahrenheitEditText"
-        android:layout_below="@+id/celsiusEditText"
+        android:layout_below="@+id/euroEditText"
         android:layout_marginTop="26dp"
-        android:text="Fahrenheit" />
+        android:text="Fahrenheit"
+        android:visibility="gone"/>
 
     <EditText
         android:id="@+id/fahrenheitEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/celsiusEditText"
+        android:layout_alignLeft="@+id/euroEditText"
         android:layout_below="@+id/fahrenheitTextView"
         android:ems="10"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:visibility="gone"/>
 
     <RadioGroup
         android:id="@+id/radio_group"
@@ -59,18 +61,18 @@
         android:layout_centerHorizontal="true">
 
         <RadioButton
-            android:id="@+id/radioC"
+            android:id="@+id/radioUSD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
-            android:text="Celcius" />
+            android:text="USD" />
 
         <RadioButton
-            android:id="@+id/radioF"
+            android:id="@+id/radioGBP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fahrenheit" />
+            android:text="GBP" />
 
     </RadioGroup>
 

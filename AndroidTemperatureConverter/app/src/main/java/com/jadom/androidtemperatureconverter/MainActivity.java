@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,17 +19,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         radioGroup = findViewById(R.id.radio_group);
-        celsiusET = findViewById(R.id.celsiusEditText);
+        celsiusET = findViewById(R.id.euroEditText);
         fahrenheitET = findViewById(R.id.fahrenheitEditText);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.radioF:
+                    case R.id.radioGBP:
                         fahrenheitET.setEnabled(false);
                         celsiusET.setEnabled(true);
                         break;
-                    case R.id.radioC:
+                    case R.id.radioUSD:
                         fahrenheitET.setEnabled(true);
                         celsiusET.setEnabled(false);
                 }
@@ -57,13 +56,13 @@ public class MainActivity extends AppCompatActivity {
             radioGroup.getCheckedRadioButtonId();
 
 
-        if (radioGroup.getCheckedRadioButtonId() == R.id.radioC) {
+        if (radioGroup.getCheckedRadioButtonId() == R.id.radioUSD) {
             double d = ((Double.parseDouble(fahrenheit) - 32) * (5.0 / 9.0));
             celsiusET.setText(getString(R.string.degrees, Double.toString(d)));
 
         }
 
-        if (radioGroup.getCheckedRadioButtonId() == R.id.radioF) {
+        if (radioGroup.getCheckedRadioButtonId() == R.id.radioGBP) {
             double d = ((Double.parseDouble(celsius) * (9.0 / 5.0)) + 32);
             fahrenheitET.setText(getString(R.string.degrees, Double.toString(d)));
         }

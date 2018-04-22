@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jadom.helloactivities.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="org.gc.helloactivities.MainActivity"
+        tools:layout_editor_absoluteY="81dp"
+        tools:showIn="@layout/activity_main">
+
+        <TextView
+            android:id="@+id/reviewLabel"
+            android:layout_width="150dp"
+            android:layout_height="22dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/reviewLabel"
+            app:layout_constraintBottom_toTopOf="@+id/reviewEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+        <EditText
+            android:id="@+id/reviewEditText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="25dp"
+            android:inputType="textAutoComplete"
+            android:minLines="2"
+            android:text=""
+            app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+            app:layout_constraintEnd_toEndOf="@+id/reviewLabel"
+            app:layout_constraintStart_toStartOf="@+id/reviewLabel"
+            app:layout_constraintTop_toBottomOf="@+id/reviewLabel"></EditText>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="285dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="28dp"
+            android:layout_marginStart="16dp"
+            android:numStars="5"
+            android:stepSize="1.0"
+            app:layout_constraintBottom_toTopOf="@+id/reviewButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reviewEditText"></RatingBar>
+
+        <Button
+            android:id="@+id/reviewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="250dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_horizontal"
+            android:onClick="review"
+            android:text="@string/reviewButtonLabel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar"></Button>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+</android.support.design.widget.CoordinatorLayout>

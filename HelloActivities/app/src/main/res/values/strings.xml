@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hello Activities</string>
+    <string name="reviewLabel">Review:</string>
+    <string name="reviewButtonLabel">Submit Review</string>
+</resources>
