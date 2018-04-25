@@ -1,6 +1,6 @@
 #Jason Domican EAD2 exercise
 
-
+# Dictionary of euro-to-x exchange rates
 euro_rates = {'USD': 1.2, 'CAD': 1.0, 'GBP': 0.85}
 
 def convert_from_euro(value, to_currency):
@@ -42,17 +42,22 @@ def credit(amount, account):
 debit(100, euro_account)
 debit(200, euro_account)
 credit(50, euro_account)
-print(euro_account)
+print("Euro Account Transactions: " + str(euro_account))
 print(balance(euro_account))
 
+#Format string output
 def format(a, b):
     output = ''
+    print("a:")
+    print(a)
+    print("b:")
+    print(b)
     if b > 0:
         output += 'credit: '
     else:
         output += 'debit: '
     return str(a) + output + str(b) + ' '
-output = reduce(format, euro_account, '')
+output = reduce(format, euro_account, '')   #reduce() places the optional 3rd parameter before the values of the second argument, if present.
 print(output)
 
 #convert to dollars
@@ -62,7 +67,4 @@ print(balance(dollar_account))
 
 output_dollar = reduce(format, dollar_account, '')
 print(output_dollar)
-
-
-
 
